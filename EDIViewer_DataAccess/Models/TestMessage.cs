@@ -13,13 +13,11 @@ namespace EDIViewer_DataAccess.Models
         public List<SubMessageData> SubMessages { get; set; }
 
     }
-
     public class SubMessageData
     {
         public int Id { get; set; }
         public List<MessageListData> messageListDatas { get; set; }
     }
-
     public class MessageListData
     {
         public int Id { get; set; }
