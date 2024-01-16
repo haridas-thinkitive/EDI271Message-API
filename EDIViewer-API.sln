@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIViewer_API", "EDIViewer_API\EDIViewer_API.csproj", "{FD009369-11BD-4584-B0FA-4F81E5EE896D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIViewer_Core", "EDIViewer_Core\EDIViewer_Core.csproj", "{0A8079DC-B64A-410B-AEA5-F7CE9A995042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIViewer_DataAccess", "EDIViewer_DataAccess\EDIViewer_DataAccess.csproj", "{41ABA1AA-09A2-4396-8946-6E5488503EC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIViewer_Test", "EDIViewer_API_Test\EDIViewer_Test.csproj", "{FE5A418E-4DA7-46D7-A8CB-1128F5BA770A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD009369-11BD-4584-B0FA-4F81E5EE896D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD009369-11BD-4584-B0FA-4F81E5EE896D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD009369-11BD-4584-B0FA-4F81E5EE896D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD009369-11BD-4584-B0FA-4F81E5EE896D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8079DC-B64A-410B-AEA5-F7CE9A995042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8079DC-B64A-410B-AEA5-F7CE9A995042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8079DC-B64A-410B-AEA5-F7CE9A995042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8079DC-B64A-410B-AEA5-F7CE9A995042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41ABA1AA-09A2-4396-8946-6E5488503EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41ABA1AA-09A2-4396-8946-6E5488503EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41ABA1AA-09A2-4396-8946-6E5488503EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41ABA1AA-09A2-4396-8946-6E5488503EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE5A418E-4DA7-46D7-A8CB-1128F5BA770A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5A418E-4DA7-46D7-A8CB-1128F5BA770A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5A418E-4DA7-46D7-A8CB-1128F5BA770A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5A418E-4DA7-46D7-A8CB-1128F5BA770A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA158A63-CD88-4749-B6A0-EF85EBFC723A}
+	EndGlobalSection
+EndGlobal
