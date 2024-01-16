@@ -1,6 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric;
-using EdiFabric.Core.Model.Hl7;
 using EdiFabric.Framework.Readers;
 using EDIViewer_Core.Interfaces.MessageOperation;
 using EDIViewer_DataAccess.Data;
@@ -33,7 +32,8 @@ namespace EDIViewer_Core.Services.MessageOperation
         private readonly string _ServiceCode_T;
         private readonly string _ServiceCode_ST;
         private readonly string _ServiceCode_CH;
-
+        private readonly string _timePeriodQualifier_06;
+        private readonly string _inPlanNetworkIndicator_12;
         public MessageOperationService(ApplicationDbContext applicationDbContext,IConfiguration configuration,ILogger<MessageOperationService> logger)
         {
             _Context = applicationDbContext;
@@ -50,6 +50,8 @@ namespace EDIViewer_Core.Services.MessageOperation
             _ServiceCode_T = _Configuration["MessageSettings:ServiceCode_T"];
             _ServiceCode_ST = _Configuration["MessageSettings:ServiceCode_ST"];
             _ServiceCode_CH = _Configuration["MessageSettings:ServiceCode_CH"];
+            _timePeriodQualifier_06 = _Configuration["MessageSettings:TimePeriodQualifier_06"];
+            _inPlanNetworkIndicator_12 = _Configuration["MessageSettings:InPlanNetworkIndicator_12"];
 
         }
 
@@ -170,8 +172,6 @@ namespace EDIViewer_Core.Services.MessageOperation
                                                     {
                                                         new MessageListData
                                                         {
-
-
                                                             FreeMessageText_01 = string.Join(", ", loop2110D.MSG_MessageText.Select(msg => msg.FreeFormMessageText_01)),
                                                             Segment = ConactMessageLoop2110D(loop2110D),
                                                             MessageType = GetMessageTypes(text.FreeFormMessageText_01),
@@ -179,9 +179,6 @@ namespace EDIViewer_Core.Services.MessageOperation
                                                             EncounterID = messageText.EncounterId  ,
                                                             Logmessage = "Successfully Co-Pay processed with ID:"+ messageText.EncounterId,
                                                             InsuranceDate = GetDTP_SubscriberDate(transactions)
-
-
-
                                                         }
                                                     }
                                                 }).ToList()
@@ -198,8 +195,8 @@ namespace EDIViewer_Core.Services.MessageOperation
                                             .Where(messageListData =>
                                                 messageListData != null &&
                                                 messageListData.Segment != null &&
-                                                messageListData.Segment.Contains("27") &&
-                                                messageListData.Segment.Contains("Y"))
+                                                messageListData.Segment.Contains(_timePeriodQualifier_06) &&
+                                                messageListData.Segment.Contains(_inPlanNetworkIndicator_12))
                                             .ToList();
 
                                             var testMessagesToSave = new List<TestMessage>
@@ -265,8 +262,8 @@ namespace EDIViewer_Core.Services.MessageOperation
                                         .Where(messageListData =>
                                             messageListData != null &&
                                             messageListData.Segment != null &&
-                                            messageListData.Segment.Contains("27") &&
-                                            messageListData.Segment.Contains("Y"))
+                                            messageListData.Segment.Contains(_timePeriodQualifier_06) &&
+                                            messageListData.Segment.Contains(_inPlanNetworkIndicator_12))
                                         .ToList();
 
                                         var testMessagesToSave = new List<TestMessage>
