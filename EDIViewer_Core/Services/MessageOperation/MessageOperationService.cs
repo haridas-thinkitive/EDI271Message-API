@@ -1,6 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric;
-using EdiFabric.Core.Model.Hl7;
 using EdiFabric.Framework.Readers;
 using EDIViewer_Core.Interfaces.MessageOperation;
 using EDIViewer_DataAccess.Data;
